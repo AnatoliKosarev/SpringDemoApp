@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 // if no name specified like "thatSillyCoach" in @Component("thatSillyCoach")- default name will be generated = "tennisCoach"
 @Component
-@Scope("prototype")
+@Scope("singleton")
 public class TennisCoach implements Coach {
 	
 	// making dependency injection for fortuneService field with the use of "reflection"
@@ -30,7 +30,7 @@ public class TennisCoach implements Coach {
 	// if several classes implement required interface - the bean specified in @Qualifier("") will be injected 
 	// note that for constructor @Qualifier annotation has to be specified inside of the constructor arguments
 	@Autowired
-	public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
+	public TennisCoach(@Qualifier("randomFileFortuneService") FortuneService fortuneService) {
 		System.out.println("Inside TennisCoach constructor");
 		this.fortuneService = fortuneService;
 	}
