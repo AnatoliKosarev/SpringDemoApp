@@ -1,11 +1,16 @@
 package com.luv2code.springdemo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 // if no name specified like "thatSillyCoach" in @Component("thatSillyCoach")- default name will be generated = "tennisCoach"
 @Component
+@Scope("prototype")
 public class TennisCoach implements Coach {
 	
 	// making dependency injection for fortuneService field with the use of "reflection"
@@ -40,6 +45,13 @@ public class TennisCoach implements Coach {
 		this.fortuneService = fortuneService;
 	}
 	*/
+	
+	// performed after bean creation, constructor, dependency injections (setter methods)
+	@PostConstruct
+	public void doMyInitMethod() {
+		System.out.println("Inside TennisCoach init method");
+	}
+	
 
 	@Override
 	public String getDailyWorkout() {
@@ -49,6 +61,13 @@ public class TennisCoach implements Coach {
 	@Override
 	public String getDailyFortune() {
 		return fortuneService.getDailyFortune();
+	}
+	
+	// performed before bean destruction
+	// not performed automatically for prototype beans - can be done only with the use of bean post-processor, which should implement DisposableBeans interface
+	@PreDestroy
+	public void doMyDestroyMethod() {
+		System.out.println("Inside TennisCoach destroy method");
 	}
 
 }
