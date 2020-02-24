@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 import javax.annotation.PostConstruct;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -60,12 +59,12 @@ public class RandomFileFortuneService implements FortuneService {
 	// reading strings from file using BufferedReader class
 	/*
 	try (BufferedReader br = new BufferedReader(
-				new FileReader(theFile))) {
+				new FileReader(file))) {
 
 			String tempLine;
 
 			while ((tempLine = br.readLine()) != null) {
-				theFortunes.add(tempLine);
+				list.add(tempLine);
 			}
 			
 		} catch (IOException e) {
