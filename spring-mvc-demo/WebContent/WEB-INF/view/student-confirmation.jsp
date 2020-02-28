@@ -13,7 +13,11 @@ The student is confirmed: ${student.firstName} ${student.lastName}
 
 <br><br>
 
-Country: ${student.country}
+Country: ${student.countryValue}
+
+<br><br>
+
+Favorite programming language: ${student.favoriteLanguage}
 
 <br><br>
 

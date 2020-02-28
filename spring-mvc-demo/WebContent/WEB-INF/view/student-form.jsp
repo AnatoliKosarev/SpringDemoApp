@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<!-- action - where it navigates after submit; set methods are called for firstName, lastName -->
+	<!-- action - where it navigates after submit; set methods are called for firstName, lastName, etc. -->
 	<form:form action="processForm" modelAttribute="student">
 		
 		First name: <form:input path="firstName" />
@@ -36,6 +36,17 @@
 			<form:option value="Belarus" label="Belarus" />
 			
 		</form:select>
+		-->
+		
+		<br><br>
+		
+		<form:radiobuttons path="favoriteLanguage" items="${student.languageList}" />
+		
+		<!-- Hardcoded values for dropdown list
+		Java <form:radiobutton path="favoriteLanguage" value="Java" />
+		Javascript <form:radiobutton path="favoriteLanguage" value="Javascript" />
+		C# <form:radiobutton path="favoriteLanguage" value="C#" />
+		Python <form:radiobutton path="favoriteLanguage" value="Python" />
 		-->
 		
 		<br><br>

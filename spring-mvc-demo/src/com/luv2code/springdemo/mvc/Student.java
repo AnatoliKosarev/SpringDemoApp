@@ -7,9 +7,12 @@ public class Student {
 	private String firstName;
 	private String lastName;
 	private String country;
+	private String favoriteLanguage;
 	
 	// LinkedHashMap - ordered "key, value" list
 	private LinkedHashMap<String, String> countryList;
+	
+	private LinkedHashMap<String, String> languageList;
 	
 	public Student() {
 		
@@ -21,6 +24,13 @@ public class Student {
 		countryList.put("DE", "Germany");
 		countryList.put("BY", "Belarus");
 		countryList.put("US", "USA");
+		
+		languageList = new LinkedHashMap<>();
+		
+		languageList.put("Java", "Java");
+		languageList.put("JS", "JS");
+		languageList.put("Python", "Python");
+		languageList.put("Kotlin", "Kotlin");
 		
 	}
 
@@ -40,6 +50,14 @@ public class Student {
 		this.lastName = lastName;
 	}
 
+	public String getCountryKey() {
+		return country;
+	}
+	
+	public String getCountryValue() {
+		return countryList.get(country);
+	}
+	
 	public String getCountry() {
 		return country;
 	}
@@ -51,6 +69,20 @@ public class Student {
 	public LinkedHashMap<String, String> getCountryList() {
 		return countryList;
 	}
+
+	public String getFavoriteLanguage() {
+		return favoriteLanguage;
+	}
+
+	public void setFavoriteLanguage(String favoriteLanguage) {
+		this.favoriteLanguage = favoriteLanguage;
+	}
+
+	public LinkedHashMap<String, String> getLanguageList() {
+		return languageList;
+	}
+	
+	
 	
 	
 
