@@ -18,9 +18,32 @@
 		
 		<br><br>
 		
+		Country:
+		
+		<!-- when form is loaded, Spring will call student.getCountryList and will populate dropdown list -->
+		<form:select path="country">
+		
+			<form:options items="${student.countryList}" />
+			
+		</form:select>
+		
+		<!-- Hardcoded values for dropdown list
+		<form:select path="country">
+		
+			<form:option value="Brazil" label="Brazil" />
+			<form:option value="France" label="France" />
+			<form:option value="Germany" label="Germany" />
+			<form:option value="Belarus" label="Belarus" />
+			
+		</form:select>
+		-->
+		
+		<br><br>
+		
 		<input type="submit" value="Submit" />
 		
 	</form:form>
+	
 
 </body>
 </html>

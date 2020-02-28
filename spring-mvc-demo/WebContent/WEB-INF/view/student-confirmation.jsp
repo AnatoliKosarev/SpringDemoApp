@@ -8,8 +8,12 @@
 </head>
 <body>
 
-<!-- get methods are called for firstName, lastName -->
-The student is confirmed: ${student.firstName} ${student.lastName}
+<!-- get methods are called for firstName, lastName etc. -->
+The student is confirmed: ${student.firstName} ${student.lastName} 
+
+<br><br>
+
+Country: ${student.country}
 
 <br><br>
 
