@@ -8,6 +8,8 @@ public class Student {
 	private String lastName;
 	private String country;
 	private String favoriteLanguage;
+	// operatingSystems - multiple selection is possible because it's used in checkbox - that's why we're using an array for it
+	private String[] operatingSystems;
 	
 	// LinkedHashMap - ordered "key, value" list
 	private LinkedHashMap<String, String> countryList;
@@ -82,6 +84,13 @@ public class Student {
 		return languageList;
 	}
 	
+	public void setOperatingSystems(String[] operatingSystems) {
+		this.operatingSystems = operatingSystems;
+	}
+	
+	public String[] getOperatingSystems() {
+		return operatingSystems;
+	}
 	
 	
 	
